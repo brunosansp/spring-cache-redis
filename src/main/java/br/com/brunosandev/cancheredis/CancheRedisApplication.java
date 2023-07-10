@@ -8,6 +8,7 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +33,7 @@ public class CancheRedisApplication {
 	}
 }
 
-record Product (Long id, String name, String description) {}
+record Product (Long id, String name, String description) implements Serializable {}
 
 @Service
 class ProductService {
